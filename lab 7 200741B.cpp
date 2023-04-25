@@ -42,9 +42,12 @@ struct node *minNode(struct node* root){
 
 // Deleting a node
 struct node *deleteNode(struct node *root, int key) {
-    if (root == NULL) return root;
-    if (key < root->key) root->left = deleteNode(root->left, key);
-    else if (key > root->key) root->right = deleteNode(root->right, key);
+    if (root == NULL)
+        return root;
+    if (key < root->key) 
+        root->left = deleteNode(root->left, key);
+    else if (key > root->key) 
+        root->right = deleteNode(root->right, key);
     else {
         if (root->left == NULL) {
             node* temp = root->right;
